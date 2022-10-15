@@ -1,0 +1,64 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## 1번
+
+$$
+p(y|\theta)=\binom{43}{15}\theta^{15}(1-\theta^{28})
+$$ $$
+p(\theta)*p(y|\theta)=\frac{1}{4}\frac{\Gamma(10)\Gamma(44)}{\Gamma(2)\Gamma(8)\Gamma(29)\Gamma(16)}[3\theta^{16}(1-\theta)^{35}+\theta^{22}(1-\theta)^{29}]
+$$ 대괄호 안쪽을 보면, $beta(17, 36)$과 $beta(23, 30)$의 Mixture로
+이뤄져 있음을 알 수 있다.
+
+### 3-10
+
+#### (a)
+
+-   h의 유도 $$
+      \log(\theta/(1-\theta)) = \psi \\
+      \theta/(1-\theta) = e^\psi \\
+      \theta = \frac{e^\psi}{e^\psi+1}
+    $$
+
+-   $\frac{dh}{d\psi}$ 유도 $$
+    \frac{dh}{d\psi} = \frac{e^\psi(e^\psi+1)-e^\psi(e^\psi)}{(e^\psi+1)^2}\\
+    = \frac{e^\psi}{(e^\psi+1)^2}
+    $$
+
+-   $p_\psi$ 유도 $\theta \sim beta(a,b)$ 이므로 $$
+    p_\psi(\psi) = p_\theta(h(\psi)) * \Bigg|\frac{dh}{d\psi}\Bigg|\\
+    =\frac{1}{B(a,b)}(\frac{e^\psi}{e^\psi+1})^{a-1}(1-\frac{e^\psi}{e^\psi+1})^{b-1}\frac{e^\psi}{(e^\psi+1)^2}\\
+    = \frac{1}{B(a,b)}(\frac{e^\psi}{e^\psi+1})^{a-1}(\frac{1}{e^\psi+1})^{b-1}\frac{e^\psi}{(e^\psi+1)}\frac{1}{(e^\psi+1)}\\
+    = \frac{1}{B(a,b)}(\frac{e^\psi}{e^\psi+1})^{a}(\frac{1}{e^\psi+1})^{b}
+    $$
+
+## 3번
+
+### (a)
+
+Likelihood는 $\binom{1000}{710}\theta^{710}(1-\theta)^{290}$이다.
+$P_A(\theta),~ P_B(\theta)$는 각자 $$
+P_A(\theta) = 2\theta=\frac{1}{B(2,1)}\theta^{(2-1)}(1-\theta)^{(1-1)}\\
+P_B(\theta) = 3\theta^2=\frac{1}{B(3,1)}\theta^{(3-1)}(1-\theta)^{(1-1)}
+$$ 로 표현될 수 있으므로 $beta(2,1),~ beta(3,1)$분포를 따름을 알 수
+있다.
+
+Beta prior는 binomial likelihood와 conjugate이고, posterior도 beta
+분포를 따른다. 그러므로 $$
+P_A(\theta|X) \sim Beta(712, 291)\\
+P_B(\theta|X) \sim Beta(713, 291)
+$$
+
+
+### (b)
+
+
+
+
+
+
+
+
